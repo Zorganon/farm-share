@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   
   resources :users
   get 'static_pages/index'
-  get 'static_pages/farmer-dashboard'
-  get 'static_pages/consumer-dashboard'
+  get 'static_pages/dashboard'
+  get 'static_pages/farmerdash'
+  get 'static_pages/consumerdash'
   
   root 'static_pages#index'
 

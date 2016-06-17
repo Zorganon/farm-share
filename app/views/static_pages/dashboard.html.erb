@@ -1,7 +1,5 @@
-<% if @user.type == "farmer" %>
-  <%=render farmerdash %>
-<% else if @user.type == "admin"%>
-  <%= render admindash %>
+<% if @user.farmer == true %>
+  <%=render "farmerdash" %>
 <% else %>
-  <%= render consumerdash %>
-<%end%>
+  <%= render "consumerdash" %>
+<% end %>

@@ -5,10 +5,8 @@
     <%= devise_error_messages! %>
     
     <div class="button">
-      <%= f.radio_button(:type, "consumer") %>
-      <%= f.label(:type, "Consumer") %>
-      <%= f.radio_button(:type, "farmer") %>
-      <%= f.label(:type, "Farmer") %>
+      <%= f.check_box(:farmer, "farmer") %>
+      <%= f.label(:farmer, "farmer") %>
     </div>
     
     <div class="field">
