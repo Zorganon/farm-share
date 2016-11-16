@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
     if user_signed_in? && user.type == 'farmer'
       @user = User.find(current_user)
     end
+#    @share = User.
   end
   
   def consumerdash
