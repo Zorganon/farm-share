@@ -6,14 +6,12 @@ class StaticPagesController < ApplicationController
   end
   
   def farmerdash
-    if user_signed_in? && user.type == 'farmer'
-      @user = User.find(current_user)
-    end
-#    @share = User.
+    @user = User.find(current_user)
+    @shares = Share.all
   end
   
   def consumerdash
-    if user_signed_in? && user.type == 'consumer'
+    if user_signed_in? && user.farmer == 0
       @user = User.find(current_user)
     end
   end

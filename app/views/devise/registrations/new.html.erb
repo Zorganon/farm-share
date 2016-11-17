@@ -4,9 +4,9 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     
-    <div class="button">
-      <%= f.check_box(:farmer, "farmer") %>
-      <%= f.label(:farmer, "farmer") %>
+    <div class="field">
+      <%= f.check_box :farmer %>
+      <%= f.label :farmer %>
     </div>
     
     <div class="field">
