@@ -5,15 +5,25 @@
     <%= devise_error_messages! %>
     
     <div class="field">
-      <%= f.check_box :farmer %>
-      <%= f.label :farmer %>
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name %>
     </div>
     
     <div class="field">
       <%= f.label :zip %><br />
       <%= f.text_field :location%>
     </div>
-  
+    
+    <div class="field">
+      <%= f.check_box :farmer %>
+      <%= f.label :farmer %>
+    </div>
+    
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>

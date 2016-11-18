@@ -14,8 +14,11 @@
             <p>Inventory</p>
         </div>
         <div class="panel-default">
-            <%= render @shares %>
-            
+            <% if @share.present? %>
+                <%= render @share %>
+            <% else %>
+                <h3>Ain't got no orders yet.</h3>
+            <% end %>
         </div>
         
     </div>

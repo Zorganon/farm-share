@@ -10,6 +10,7 @@ class SharesController < ApplicationController
   # GET /shares/1
   # GET /shares/1.json
   def show
+    @share = Share.all
   end
 
   # GET /shares/new
