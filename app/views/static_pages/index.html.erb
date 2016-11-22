@@ -33,5 +33,20 @@
 </div>
 <!-- Scroll up area 2 -->
 <div class="user-setup">
+  <div class="row">
+    <div class="panel col-md-6 col-lg-6">
+      <div class="panel panel-default signup-panel">
+        <h2>Sign Up!</h2>
+        <p>We swear It's quick and easy</p>
+        <%= render "devise/sessions/new.html.erb" %>
+      </div>
+    </div>
+    <div class="panel col-md-6 col-lg-6">
+      <div class="panel panel-default login">
+        <h2>Already a member?</h2>
+        <%= render "devise/registrations/new" %>
+      </div>
+    </div>
+  </div>
     
 </div>
