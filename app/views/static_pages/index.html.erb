@@ -1,4 +1,5 @@
 <div class="jumbotron">
+  <%= image_tag("pasture-h405px.jpg", :class => 'front-page-image') %>
   <div class="container">
     <h1>Farm Share</h1>
     <h3>Find local animal shares and make the world a happier place!</h3>
@@ -26,35 +27,32 @@
       </div>
     </div>
   </div>
-</div>
-<!-- Scrolling picture between text areas -->
-<div class="scroll-image">
-  <%= image_tag("pasture-h405px.jpg", :class => 'front-page-image') %>
-</div>
-<!-- Scroll up area 2 -->
-<div class="user-setup">
-  <div class="row">
-    <div class="col-md-6 col-lg-6">
-      <div class="panel panel-default signup-panel">
-        <div class="panel-heading">
-          <h2 class="panel-title">Sign Up!</h2>
-        </div>
-        <div class="panel-body">
-          <p>We swear It's quick and easy</p>
-          <%= render "devise/registrations/new.html.erb" %>
+
+
+  <!-- Scroll up area 2 -->
+  <div class="user-setup">
+    <div class="row">
+      <div class="col-md-6 col-lg-6">
+        <div class="panel panel-default signup-panel">
+          <div class="panel-heading">
+            <h2 class="panel-title">Sign Up!</h2>
+          </div>
+          <div class="panel-body">
+            <p>We swear It's quick and easy</p>
+            <%= render "devise/registrations/new.html.erb" %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6 col-lg-6">
-      <div class="panel panel-default login-panel">
-        <div class="panel-heading">
-          <h2 class="panel-title">Already a member?</h2>
-        </div>
-        <div class="panel-body">
-          <%= render "devise/sessions/new" %>
+      <div class="col-md-6 col-lg-6">
+        <div class="panel panel-default login-panel">
+          <div class="panel-heading">
+            <h2 class="panel-title">Already a member?</h2>
+          </div>
+          <div class="panel-body">
+            <%= render "devise/sessions/new" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-    
 </div>
