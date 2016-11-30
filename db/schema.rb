@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130201852) do
+ActiveRecord::Schema.define(version: 20161130205412) do
 
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161130201852) do
     t.integer  "farmer_id"
     t.decimal  "fee"
     t.boolean  "delivery"
+    t.integer  "quantity"
   end
 
   create_table "users", force: :cascade do |t|

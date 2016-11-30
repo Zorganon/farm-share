@@ -1,29 +1,40 @@
-<%= form_for(@share) do |f| %>
-  <% if @share.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@share.errors.count, "error") %> prohibited this share from being saved:</h2>
-
-      <ul>
-      <% @share.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container">
+  <%= form_for(@share) do |f| %>
+    <% if @share.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@share.errors.count, "error") %> prohibited this share from being saved:</h2>
+  
+        <ul>
+        <% @share.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= f.label :animal %><br>
+      <%= f.text_field :animal %>
+    </div>
+    <div class="field">
+      <%= f.label :size %><br>
+      <%= f.text_field :size %>
+    </div>
+    <div class="field">
+      <%= f.label :price %><br>
+      <%= f.number_field :price %>
+    </div>
+    <div class="field">
+      <%= f.label :fee %><br>
+      <%= f.number_field :fee%>
+    </div>
+    <div class="field">
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :animal %><br>
-    <%= f.text_field :animal %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br>
-    <%= f.text_field :size %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -11,7 +11,6 @@ class SharesController < ApplicationController
   # GET /shares/1.json
   def show
     @user = User.find(current_user)
-    @share = Share.all
   end
 
   # GET /shares/new
