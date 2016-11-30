@@ -11,6 +11,20 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Price per lb: $</strong>
   <%= share.price %>
+</p>
+
+<p>
+  <strong>Processing Fee: $</strong>
+  <%= share.fee %>
+</p>
+
+<p>
+  <strong>Delivery? </strong>
+  <% if share.delivery == true %>
+    <p>Yes</p>
+  <% else %>
+    <p>No</p>
+  <% end %>
 </p>

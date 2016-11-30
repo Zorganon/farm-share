@@ -1,24 +1,31 @@
 <div class="container">
 	<h1>Dashboard Specific to Farmers</h1>
 	<div class="row">
-		<div class="panel panel-default">
+		<div class="panel panel-default col-lg-6 col-md-6 col-sm-12">
 			<div class="panel-heading">
 				<p>Orders Widget</p>
 			</div>
 			<div class="panel-body">
+				<% if @orders.present? %>
+					<%= render @orders %>
+				<% else %>
+					<h3>Ain't got no orders yet.</h3>
+				<% end %>
 			</div>
 			<div class="panel-default">
 			</div>
 		</div>
-		<div class="panel">
+		<div class="panel panel-default col-lg-6 col-md-6 col-sm-12">
 			<div class="panel-heading">
-				<p>Inventory</p>
+				<div class="panel-title">
+					<p>Inventory</p>
+				</div>
 			</div>
-			<div class="panel-default">
+			<div class="panel-body">
 				<% if @shares.present? %>
 					<%= render @shares %>
 				<% else %>
-					<h3>Ain't got no orders yet.</h3>
+					<h3>Ain't got no Live Stock yet.</h3>
 				<% end %>
 			</div>
 		</div>
