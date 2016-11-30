@@ -4,6 +4,7 @@ class SharesController < ApplicationController
   # GET /shares
   # GET /shares.json
   def index
+    @user = User.find(current_user)
     @shares = Share.all
   end
 
@@ -16,6 +17,7 @@ class SharesController < ApplicationController
   # GET /shares/new
   def new
     @share = Share.new
+    @user = User.find(current_user)
   end
 
   # GET /shares/1/edit
@@ -25,7 +27,9 @@ class SharesController < ApplicationController
   # POST /shares
   # POST /shares.json
   def create
+    @user = User.find(current_user)
     @share = Share.new(share_params)
+    @share.farmer_id = @user.id
 
     respond_to do |format|
       if @share.save
@@ -70,6 +74,6 @@ class SharesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def share_params
-      params.require(:share).permit(:animal, :size, :price)
+      params.require(:share).permit(:animal, :size, :price, :fee, :quantity, :delivery)
     end
 end

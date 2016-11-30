@@ -1,5 +1,5 @@
-<% if @user.farmer == 1 %>
-  <%=render "farmerdash" %>
+<% if @user.farmer? %>
+  <%= render "farmerdash" %>
 <% else %>
   <%= render "consumerdash" %>
 <% end %>
