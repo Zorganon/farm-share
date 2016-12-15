@@ -1,23 +1,32 @@
 class SharesController < ApplicationController
   before_action :set_share, only: [:show, :edit, :update, :destroy]
+  before_action :get_user
+  before_action :check_auth, only: [:edit, :update, :destroy]
+  
+  def check_auth
+    if session[:user_id] != @share.farmer_id
+      redirect_to(static_pages_dashboard_path, notice: "You are not authorized to do that")
+    end
+  end
+  
+  def get_user
+    @user = User.find(current_user)
+  end
 
   # GET /shares
   # GET /shares.json
   def index
-    @user = User.find(current_user)
     @shares = Share.all
   end
 
   # GET /shares/1
   # GET /shares/1.json
   def show
-    @user = User.find(current_user)
   end
 
   # GET /shares/new
   def new
     @share = Share.new
-    @user = User.find(current_user)
   end
 
   # GET /shares/1/edit
@@ -27,7 +36,6 @@ class SharesController < ApplicationController
   # POST /shares
   # POST /shares.json
   def create
-    @user = User.find(current_user)
     @share = Share.new(share_params)
     @share.farmer_id = @user.id
 
@@ -67,13 +75,16 @@ class SharesController < ApplicationController
   end
 
   private
+      
     # Use callbacks to share common setup or constraints between actions.
     def set_share
       @share = Share.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+            # Never trust parameters from the scary internet, only allow the white list through.
     def share_params
       params.require(:share).permit(:animal, :size, :price, :fee, :quantity, :delivery)
     end
+  
+
+
 end
