@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   
   resources :shares
   resources :orders
+  resources :users
+  
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => { registrations: 'registrations' }  
   
-  resources :users
   
   get 'static_pages/index'
   get 'static_pages/dashboard'
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
   get 'static_pages/consumerdash'
   
   root 'static_pages#index'
+  
+  constrains subdomain: 'api' do
+    resources :shares, only: [:index, :show]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

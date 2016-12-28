@@ -17,4 +17,7 @@ class StaticPagesController < ApplicationController
       @shares = Share.all
     end
   end
+  
+  
+  
 end
