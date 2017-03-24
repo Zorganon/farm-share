@@ -7,8 +7,12 @@ class StaticPagesController < ApplicationController
   end
   
   def farmerdash
-    @user = User.find(current_user)
-    @shares = Share.where("farmer_id = ?", @user.id)
+    if user_signed_in?
+      @user = User.find(current_user)
+      @shares = Share.where("farmer_id = ?", @user.id)
+    else
+      redirect_to( root_path )
+    end
   end
   
   def consumerdash
