@@ -25,6 +25,10 @@ gem 'bundlr'
 
 gem 'devise'
 
+gem 'react-rails'
+
+gem 'webpacker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,6 +47,8 @@ group :development, :test do
   gem 'byebug'
   
   gem 'rspec', '~> 3.0'
+  
+  gem 'factory_girl_rails', "~> 4.0"
 end
 
 group :development do
